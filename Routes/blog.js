@@ -1,8 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
+
+router.post('/blog/create', (req, res) => {
+    res.send(req.body)
+})
+
 // Define a GET route for /users
-router.get('/', (req, res) => {
+router.get('/blog', (req, res) => {
     res.send('this is the main home for blog');
 });
 

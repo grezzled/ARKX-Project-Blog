@@ -1,0 +1,105 @@
+{
+  "users": [
+    {
+      "email": "soufiane@gmail.com",
+      "password": "soufiane_hak",
+      "id": 2
+    },
+    {
+      "email": "mail@mail.com",
+      "password": "thisisapassword",
+      "id": 3
+    },
+    {
+      "email": "mail@mail.com",
+      "password": " validationOptions",
+      "id": 4
+    },
+    {
+      "email": "mail@mymail.com",
+      "password": " validationOptions",
+      "id": 5
+    },
+    {
+      "email": "newmail@mail.com",
+      "salt": "$2a$10$Wix72dBkaiTvIvto4xN.y.",
+      "password": "$2a$10$Wix72dBkaiTvIvto4xN.y.9ZmqoBj0FxHRxL9PxafIQ9d9iGJw2qO",
+      "createdAt": "2023-09-14T09:06:44.299Z",
+      "image": {
+        "fieldname": "image",
+        "originalname": "Screen Shot 2023-09-11 at 12.02.24.png",
+        "encoding": "7bit",
+        "mimetype": "image/png",
+        "destination": "/Users/grezzled/Desktop/Studies/ARKx/CODE/ARKX-Project-Blog/Public/uploads/",
+        "filename": "image-1694682404202-245257708.png",
+        "path": "/Users/grezzled/Desktop/Studies/ARKx/CODE/ARKX-Project-Blog/Public/uploads/image-1694682404202-245257708.png",
+        "size": 2222013
+      },
+      "id": 6
+    },
+    {
+      "email": "timaginofu@mailinator.com",
+      "salt": "$2a$10$0ci2DR9JLj9oRRxAp/FeiO",
+      "password": "$2a$10$0ci2DR9JLj9oRRxAp/FeiOU/3Ba4hVrSBNQZVas7OasEW/lcGVhNy",
+      "createdAt": "2023-09-14T09:21:52.412Z",
+      "image": "image-1694683312282-937238176.png",
+      "id": 7
+    },
+    {
+      "email": "dybicexyly@mailinator.com",
+      "salt": "$2a$10$UiWJ2f1X0iQsKGRSTqtrTO",
+      "password": "$2a$10$UiWJ2f1X0iQsKGRSTqtrTOAFK/8nqQip9ZYyynXgO7ChTGz7Piuw6",
+      "createdAt": "2023-09-14T09:23:45.745Z",
+      "image": "image-1694683425642-562315531.png",
+      "id": 8
+    },
+    {
+      "email": "sele@mailinator.com",
+      "salt": "$2a$10$TCaAIbHhRJU5mP8J58xL5e",
+      "password": "$2a$10$TCaAIbHhRJU5mP8J58xL5e.44RPslXhsg18dicwfi.y8upXhnJOoK",
+      "createdAt": "2023-09-14T09:32:07.878Z",
+      "image": "image-1694683927767-847785393.png",
+      "id": 9
+    },
+    {
+      "email": "buxihisi@mailinator.com",
+      "salt": "$2a$10$xoWJH8awf.fJBsVO0bdL0u",
+      "password": "$2a$10$xoWJH8awf.fJBsVO0bdL0u30xjS7oyALvkS3j5lgovaEBvc3tBcG.",
+      "createdAt": "Thu Sep 14 2023 10:38:56 GMT+0100 (GMT+01:00)",
+      "image": "",
+      "id": 10
+    },
+    {
+      "email": "mojy@mailinator.com",
+      "salt": "$2a$10$runM4og.P6JXPJp0eNpvEu",
+      "password": "$2a$10$runM4og.P6JXPJp0eNpvEu6h2CfP/L3v8u4Ur2Gtta.2Fb44/tsQm",
+      "createdAt": "Thu Sep 14 2023 11:16:52 GMT+0100 (GMT+01:00)",
+      "image": "",
+      "id": 11
+    },
+    {
+      "email": "fyqi@mailinator.com",
+      "salt": "$2a$10$C.OmxuSpbdMVSPWHLxKRz.",
+      "password": "$2a$10$C.OmxuSpbdMVSPWHLxKRz.IoItadgMyU2ItOcBTxwflk72WvCwgK.",
+      "createdAt": "Thu Sep 14 2023 11:17:22 GMT+0100 (GMT+01:00)",
+      "image": "",
+      "id": 12
+    },
+    {
+      "email": "soufiane@email.com",
+      "salt": "$2a$10$aHjDkPh4PdBJRaZhVziQPe",
+      "password": "$2a$10$aHjDkPh4PdBJRaZhVziQPeo1N5LzDcFJQFAYIkpjMxwReJMf47wK2",
+      "createdAt": "Thu Sep 14 2023 11:21:23 GMT+0100 (GMT+01:00)",
+      "image": "",
+      "id": 13
+    },
+    {
+      "email": "soufiane@isoufiane.com",
+      "salt": "$2a$10$0/za8RQGiHe76J6c1Lvfz.",
+      "password": "$2a$10$0/za8RQGiHe76J6c1Lvfz.DgvT4IMO8lMGQ5DNi.9IthTWPiV8Hue",
+      "createdAt": "Thu Sep 14 2023 12:04:06 GMT+0100 (GMT+01:00)",
+      "image": "image-1694689446339-856217900.jpg",
+      "id": 14
+    }
+  ]
+}
