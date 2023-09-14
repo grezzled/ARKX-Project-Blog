@@ -5,10 +5,12 @@ const path = require('path')
 const axios = require('axios')
 const jwt = require('jsonwebtoken')
 const { body, validationResult } = require('express-validator')
-const JWT_SECRET = 'your-secret-key'
+
 const JSON_SERVER_API_URL = 'http://localhost:3000'
 const utils = require('../Utils')
 const logged = require('../Middlewares/logged');
+const { isUser, postUser } = require('../Api/jsonServer')
+const { createToken } = require('../Utils/jwt')
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -45,9 +47,7 @@ router.post('/register', upload.single('image'), validationOptions, async (req, 
     }
 
     //* Check if mail already exists
-    const { data: users } = await axios.get(`${JSON_SERVER_API_URL}/users`)
-    const user = users.find(u => u.email === email)
-    if (user)
+    if (await isUser(email))
         return res.status(401).json({ error: 'Email already exist' })
 
     //* Try create new user 
@@ -61,17 +61,21 @@ router.post('/register', upload.single('image'), validationOptions, async (req, 
             image: image ? image.filename : ""
         }
 
-        const token = jwt.sign(userData, JWT_SECRET, { expiresIn: '1h' })
+        //* Save new user to JSON SERVER
+        const data = await postUser(userData)
 
-        //* save new user to JSON SERVER
-        const response = await axios.post('http://localhost:3000/users', userData)
+        //* Create token
+        const payload = { id: data.id, email: data.email, image: data.image, createdAt: data.createdAt }
+        const token = createToken(payload)
 
+        //* Save token to cookie
         res.cookie('jwt', token, { httpOnly: true })
-        res.json({ token, message: "Signed Successfully" })
+
+        res.json({ token, status: 201, message: `${data.email}: New user created successfully` })
 
     } catch (error) {
         console.error('Error saving user data:', error)
-        res.status(500).json({ error: 'Internal Server Error' + error })
+        res.status(500).json({ error: 'Internal Server Error' })
     }
 })
 
@@ -79,34 +83,42 @@ router.post('/login', async (req, res) => {
     const { email, password } = req.body
 
     try {
-        // Fetch user data from JSON server
-        const { data: users } = await axios.get(`${JSON_SERVER_API_URL}/users`)
 
-        // Find the user with the provided email
-        const user = users.find(u => u.email === email)
+        //* Check if user exists
+        const user = await isUser(email)
         if (!user)
             return res.status(401).json({ error: 'This user does not exist.' })
 
-        const salt = user.salt
-        const hashedPassword = utils.hash.makeHash(password, salt)
-
-        if (!user || user.password !== hashedPassword) {
+        //* Check if password matches
+        const hashedPassword = utils.hash.makeHash(password, user.salt)
+        if (user.password !== hashedPassword)
             return res.status(401).json({ error: 'Authentication failed' })
-        }
 
-        // User authentication successful, generate JWT token
-        const userData = {
-            id: user.id,
-            email: user.email,
-            name: user.name,
-            // Add any other user data you want to include in the token
-        }
+        
+        //* Create token
+        const data = user
+        const payload = { id: data.id, email: data.email, image: data.image, createdAt: data.createdAt }
+        const token = createToken(payload)
 
-        const token = jwt.sign(userData, JWT_SECRET, { expiresIn: '1h' })
-
-        // Return the token in the response
+        //* Save token to cookie
         res.cookie('jwt', token, { httpOnly: true })
-        res.json({ token })
+
+        res.json({ token, status: 200, message: `${data.email}: Successfully logged in` })
+
+        // // User authentication successful, generate JWT token
+        // const userData = {
+        //     id: user.id,
+        //     email: user.email,
+        //     created_at: user.createdAt,
+        //     image: user.image
+        //     // Add any other user data you want to include in the token
+        // }
+
+        // const token = jwt.sign(userData, JWT_SECRET, { expiresIn: '1h' })
+
+        // // Return the token in the response
+        // res.cookie('jwt', token, { httpOnly: true })
+        // res.json({ token })
     } catch (error) {
         console.error('Error during login:', error)
         res.status(500).json({ error: 'Internal Server Error' + error })
