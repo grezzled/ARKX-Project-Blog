@@ -228,6 +228,53 @@
       "createdAt": "Fri Sep 15 2023 00:19:33 GMT+0100 (GMT+01:00)",
       "image": "",
       "id": 30
+    },
+    {
+      "email": "cupaxuh@mailinator.com",
+      "salt": "$2a$10$1GwnvZ25eBOFUf/hwp6.0.",
+      "password": "$2a$10$1GwnvZ25eBOFUf/hwp6.0.zYyVvh23KJpt6D8rsY7S1kCj2s26V7q",
+      "createdAt": "Fri Sep 15 2023 01:06:37 GMT+0100 (GMT+01:00)",
+      "image": "",
+      "id": 31
+    },
+    {
+      "email": "coxyr@mailinator.com",
+      "salt": "$2a$10$m2DnImZ9Cq/C2dh88QMAs.",
+      "password": "$2a$10$m2DnImZ9Cq/C2dh88QMAs.BAlh5vD5paR/beYqnm6xHQkChdRy67S",
+      "createdAt": "Fri Sep 15 2023 01:09:13 GMT+0100 (GMT+01:00)",
+      "image": "",
+      "id": 32
+    },
+    {
+      "email": "rehebak@mailinator.com",
+      "salt": "$2a$10$m8yXmMQ/G5mU.jbDdff/ju",
+      "password": "$2a$10$m8yXmMQ/G5mU.jbDdff/jutbhW5K19DOV7tvRCs8PPQFc/Mb59nK.",
+      "createdAt": "Fri Sep 15 2023 01:30:47 GMT+0100 (GMT+01:00)",
+      "image": "image-1694737847032-636235733.jpg",
+      "id": 33
+    }
+  ],
+  "blogs": [
+    {
+      "title": "Aut rerum aliqua At",
+      "content": "Ullam blanditiis rep",
+      "userId": 14,
+      "userEmail": "soufiane@isoufiane.com",
+      "id": 1
+    },
+    {
+      "title": "Aut rerum aliqua At",
+      "content": "Ullam blanditiis rep",
+      "userId": 14,
+      "userEmail": "soufiane@isoufiane.com",
+      "id": 2
+    },
+    {
+      "title": "Aut rerum aliqua At",
+      "content": "Ullam blanditiis rep",
+      "userId": 14,
+      "userEmail": "soufiane@isoufiane.com",
+      "id": 3
     }
   ]
 }

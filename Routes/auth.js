@@ -2,11 +2,7 @@ const express = require('express')
 const router = express.Router()
 const multer = require('multer')
 const path = require('path')
-const axios = require('axios')
-const jwt = require('jsonwebtoken')
 const { body, validationResult } = require('express-validator')
-
-const JSON_SERVER_API_URL = 'http://localhost:3000'
 const utils = require('../Utils')
 const logged = require('../Middlewares/logged');
 const { isUser, postUser } = require('../Api/jsonServer')
@@ -43,6 +39,7 @@ router.post('/register', upload.single('image'), validationOptions, async (req, 
 
     //* Check if validation passes
     if (!errors.isEmpty()) {
+        console.log('validation not passed')
         return res.status(400).json({ errors: errors.array() })
     }
 
@@ -105,20 +102,6 @@ router.post('/login', async (req, res) => {
 
         res.json({ token, status: 200, message: `${data.email}: Successfully logged in` })
 
-        // // User authentication successful, generate JWT token
-        // const userData = {
-        //     id: user.id,
-        //     email: user.email,
-        //     created_at: user.createdAt,
-        //     image: user.image
-        //     // Add any other user data you want to include in the token
-        // }
-
-        // const token = jwt.sign(userData, JWT_SECRET, { expiresIn: '1h' })
-
-        // // Return the token in the response
-        // res.cookie('jwt', token, { httpOnly: true })
-        // res.json({ token })
     } catch (error) {
         console.error('Error during login:', error)
         res.status(500).json({ error: 'Internal Server Error' + error })
