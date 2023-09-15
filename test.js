@@ -9,7 +9,6 @@ const r = user.user({
     image: 'http://example.com',
 })
 
-// console.log(hash.makeSalt(10))
 
 console.log(r.getFirstName(),
     r.getLastName(),

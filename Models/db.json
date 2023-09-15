@@ -1,280 +1,64 @@
 {
   "users": [
     {
-      "email": "soufiane@gmail.com",
-      "password": "soufiane_hak",
-      "id": 2
-    },
-    {
-      "email": "mail@mail.com",
-      "password": "thisisapassword",
-      "id": 3
-    },
-    {
-      "email": "mail@mail.com",
-      "password": " validationOptions",
-      "id": 4
-    },
-    {
-      "email": "mail@mymail.com",
-      "password": " validationOptions",
-      "id": 5
-    },
-    {
-      "email": "newmail@mail.com",
-      "salt": "$2a$10$Wix72dBkaiTvIvto4xN.y.",
-      "password": "$2a$10$Wix72dBkaiTvIvto4xN.y.9ZmqoBj0FxHRxL9PxafIQ9d9iGJw2qO",
-      "createdAt": "2023-09-14T09:06:44.299Z",
-      "image": {
-        "fieldname": "image",
-        "originalname": "Screen Shot 2023-09-11 at 12.02.24.png",
-        "encoding": "7bit",
-        "mimetype": "image/png",
-        "destination": "/Users/grezzled/Desktop/Studies/ARKx/CODE/ARKX-Project-Blog/Public/uploads/",
-        "filename": "image-1694682404202-245257708.png",
-        "path": "/Users/grezzled/Desktop/Studies/ARKx/CODE/ARKX-Project-Blog/Public/uploads/image-1694682404202-245257708.png",
-        "size": 2222013
-      },
-      "id": 6
-    },
-    {
-      "email": "timaginofu@mailinator.com",
-      "salt": "$2a$10$0ci2DR9JLj9oRRxAp/FeiO",
-      "password": "$2a$10$0ci2DR9JLj9oRRxAp/FeiOU/3Ba4hVrSBNQZVas7OasEW/lcGVhNy",
-      "createdAt": "2023-09-14T09:21:52.412Z",
-      "image": "image-1694683312282-937238176.png",
-      "id": 7
-    },
-    {
-      "email": "dybicexyly@mailinator.com",
-      "salt": "$2a$10$UiWJ2f1X0iQsKGRSTqtrTO",
-      "password": "$2a$10$UiWJ2f1X0iQsKGRSTqtrTOAFK/8nqQip9ZYyynXgO7ChTGz7Piuw6",
-      "createdAt": "2023-09-14T09:23:45.745Z",
-      "image": "image-1694683425642-562315531.png",
-      "id": 8
-    },
-    {
-      "email": "sele@mailinator.com",
-      "salt": "$2a$10$TCaAIbHhRJU5mP8J58xL5e",
-      "password": "$2a$10$TCaAIbHhRJU5mP8J58xL5e.44RPslXhsg18dicwfi.y8upXhnJOoK",
-      "createdAt": "2023-09-14T09:32:07.878Z",
-      "image": "image-1694683927767-847785393.png",
-      "id": 9
-    },
-    {
-      "email": "buxihisi@mailinator.com",
-      "salt": "$2a$10$xoWJH8awf.fJBsVO0bdL0u",
-      "password": "$2a$10$xoWJH8awf.fJBsVO0bdL0u30xjS7oyALvkS3j5lgovaEBvc3tBcG.",
-      "createdAt": "Thu Sep 14 2023 10:38:56 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 10
-    },
-    {
-      "email": "mojy@mailinator.com",
-      "salt": "$2a$10$runM4og.P6JXPJp0eNpvEu",
-      "password": "$2a$10$runM4og.P6JXPJp0eNpvEu6h2CfP/L3v8u4Ur2Gtta.2Fb44/tsQm",
-      "createdAt": "Thu Sep 14 2023 11:16:52 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 11
-    },
-    {
-      "email": "fyqi@mailinator.com",
-      "salt": "$2a$10$C.OmxuSpbdMVSPWHLxKRz.",
-      "password": "$2a$10$C.OmxuSpbdMVSPWHLxKRz.IoItadgMyU2ItOcBTxwflk72WvCwgK.",
-      "createdAt": "Thu Sep 14 2023 11:17:22 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 12
-    },
-    {
-      "email": "soufiane@email.com",
-      "salt": "$2a$10$aHjDkPh4PdBJRaZhVziQPe",
-      "password": "$2a$10$aHjDkPh4PdBJRaZhVziQPeo1N5LzDcFJQFAYIkpjMxwReJMf47wK2",
-      "createdAt": "Thu Sep 14 2023 11:21:23 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 13
-    },
-    {
+      "fullName": "Soufiane Belchhab",
       "email": "soufiane@isoufiane.com",
-      "salt": "$2a$10$0/za8RQGiHe76J6c1Lvfz.",
-      "password": "$2a$10$0/za8RQGiHe76J6c1Lvfz.DgvT4IMO8lMGQ5DNi.9IthTWPiV8Hue",
-      "createdAt": "Thu Sep 14 2023 12:04:06 GMT+0100 (GMT+01:00)",
-      "image": "image-1694689446339-856217900.jpg",
-      "id": 14
+      "salt": "$2a$10$2ggfW285TXVUtaYTZ4AuE.",
+      "password": "$2a$10$2ggfW285TXVUtaYTZ4AuE.CagauaIi8a.BLlKtamSOZg/D9GbCec6",
+      "createdAt": "Fri Sep 15 2023 05:26:26 GMT+0100 (GMT+01:00)",
+      "image": "image-1694751986191-23543992.jpg",
+      "id": 1
     },
     {
-      "email": "hyqu@mailinator.com",
-      "salt": "$2a$10$C2R5SN0CtYZ0tFuF/tNtA.",
-      "password": "$2a$10$C2R5SN0CtYZ0tFuF/tNtA.c.E1P2q3TjBj8zIXx9qagXJ48Uspk3C",
-      "createdAt": "Thu Sep 14 2023 23:18:40 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 15
-    },
-    {
-      "email": "naqy@mailinator.com",
-      "salt": "$2a$10$WudrcKyo6qkqs/1J7UQjDu",
-      "password": "$2a$10$WudrcKyo6qkqs/1J7UQjDuebVa3cTs02BksUlAkF618PGYQwhFNFm",
-      "createdAt": "Thu Sep 14 2023 23:22:21 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 16
-    },
-    {
-      "email": "welijapyq@mailinator.com",
-      "salt": "$2a$10$8lplnrlBKagBSbQ5c0Sfuu",
-      "password": "$2a$10$8lplnrlBKagBSbQ5c0SfuuIIMgjbXrZhls3EydSaw5K0ysazqCK/6",
-      "createdAt": "Thu Sep 14 2023 23:56:53 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 17
-    },
-    {
-      "email": "gedel@mailinator.com",
-      "salt": "$2a$10$q7JpMymsx6LzA0t2bxiTUu",
-      "password": "$2a$10$q7JpMymsx6LzA0t2bxiTUuubvTaflOpWBZMnjQlqtTCy9cZGHbmoe",
-      "createdAt": "Thu Sep 14 2023 23:57:23 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 18
-    },
-    {
-      "email": "wovuqo@mailinator.com",
-      "salt": "$2a$10$rfZhOtQuk4J.jVIbpzASaO",
-      "password": "$2a$10$rfZhOtQuk4J.jVIbpzASaO56cQHLLzeG45i6Av0cWLapWiFHQFICG",
-      "createdAt": "Fri Sep 15 2023 00:12:33 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 19
-    },
-    {
-      "email": "zebadajo@mailinator.com",
-      "salt": "$2a$10$2fHVyQ4C9J1D50v3pysyO.",
-      "password": "$2a$10$2fHVyQ4C9J1D50v3pysyO.zo16Tn.lyMgZkA054EbgGxWcLbu9EM2",
-      "createdAt": "Fri Sep 15 2023 00:13:10 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 20
-    },
-    {
-      "email": "kuqutujilo@mailinator.com",
-      "salt": "$2a$10$XofCf232r7CTi400/WIZzO",
-      "password": "$2a$10$XofCf232r7CTi400/WIZzOuJtxtERQShTbSYl4QTOOPFLnAUY2nEy",
-      "createdAt": "Fri Sep 15 2023 00:13:36 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 21
-    },
-    {
-      "email": "parahotuf@mailinator.com",
-      "salt": "$2a$10$hW2QYJkLJ/IGVYV5r2Yohe",
-      "password": "$2a$10$hW2QYJkLJ/IGVYV5r2YoheA9MVnh1Gjh1/WXkFSSOKNF4GZAShA.i",
-      "createdAt": "Fri Sep 15 2023 00:15:06 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 22
-    },
-    {
-      "email": "wapyconam@mailinator.com",
-      "salt": "$2a$10$ImEqbF25MW1A824r.CwLKu",
-      "password": "$2a$10$ImEqbF25MW1A824r.CwLKuHY1fTE0SKpaiio.wRiKkjmyekRuBRNe",
-      "createdAt": "Fri Sep 15 2023 00:15:18 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 23
-    },
-    {
-      "email": "jumum@mailinator.com",
-      "salt": "$2a$10$jAId.6mWPisrMSHrSVQvVe",
-      "password": "$2a$10$jAId.6mWPisrMSHrSVQvVe782he41Q4ssMNIsR8r/h0KF4ILnF8OG",
-      "createdAt": "Fri Sep 15 2023 00:15:44 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 24
-    },
-    {
-      "email": "jurobup@mailinator.com",
-      "salt": "$2a$10$xnq2KYG4ZTG63h99FXx/tu",
-      "password": "$2a$10$xnq2KYG4ZTG63h99FXx/tuqGsfGitR/AxHpqFfjEpeX9mZ1Bsmcd2",
-      "createdAt": "Fri Sep 15 2023 00:16:14 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 25
-    },
-    {
-      "email": "jisomiqixa@mailinator.com",
-      "salt": "$2a$10$wRQbw08Gq328RjLIfOtZde",
-      "password": "$2a$10$wRQbw08Gq328RjLIfOtZde2a7ReXeAMeK3MRggl8urzwVacOMjt4y",
-      "createdAt": "Fri Sep 15 2023 00:16:48 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 26
-    },
-    {
-      "email": "semuji@mailinator.com",
-      "salt": "$2a$10$TSAkp0adumo4NO6jUGMZUe",
-      "password": "$2a$10$TSAkp0adumo4NO6jUGMZUeNdLAJH.GHVjLYUcJC2f7H2MSKo1FtUK",
-      "createdAt": "Fri Sep 15 2023 00:17:06 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 27
-    },
-    {
-      "email": "busobuc@mailinator.com",
-      "salt": "$2a$10$BWVcpx..NDUf/aRnx5nHT.",
-      "password": "$2a$10$BWVcpx..NDUf/aRnx5nHT.dp.aB6lurjaNU8YqTlfTdnqJYIT5YW.",
-      "createdAt": "Fri Sep 15 2023 00:17:36 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 28
-    },
-    {
-      "email": "myga@mailinator.com",
-      "salt": "$2a$10$W9fVwQRJLzCvWqNKQkkOre",
-      "password": "$2a$10$W9fVwQRJLzCvWqNKQkkOreL.WtQqXp4ceAted4tqHvc84D5FaRSuC",
-      "createdAt": "Fri Sep 15 2023 00:19:10 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 29
-    },
-    {
-      "email": "gofozaje@mailinator.com",
-      "salt": "$2a$10$YvOID25j5eQ1tVsG/P3NMe",
-      "password": "$2a$10$YvOID25j5eQ1tVsG/P3NMeXGnkgSN3JzcMufJ92mW7wlUqAcgvKl.",
-      "createdAt": "Fri Sep 15 2023 00:19:33 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 30
-    },
-    {
-      "email": "cupaxuh@mailinator.com",
-      "salt": "$2a$10$1GwnvZ25eBOFUf/hwp6.0.",
-      "password": "$2a$10$1GwnvZ25eBOFUf/hwp6.0.zYyVvh23KJpt6D8rsY7S1kCj2s26V7q",
-      "createdAt": "Fri Sep 15 2023 01:06:37 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 31
-    },
-    {
-      "email": "coxyr@mailinator.com",
-      "salt": "$2a$10$m2DnImZ9Cq/C2dh88QMAs.",
-      "password": "$2a$10$m2DnImZ9Cq/C2dh88QMAs.BAlh5vD5paR/beYqnm6xHQkChdRy67S",
-      "createdAt": "Fri Sep 15 2023 01:09:13 GMT+0100 (GMT+01:00)",
-      "image": "",
-      "id": 32
-    },
-    {
-      "email": "rehebak@mailinator.com",
-      "salt": "$2a$10$m8yXmMQ/G5mU.jbDdff/ju",
-      "password": "$2a$10$m8yXmMQ/G5mU.jbDdff/jutbhW5K19DOV7tvRCs8PPQFc/Mb59nK.",
-      "createdAt": "Fri Sep 15 2023 01:30:47 GMT+0100 (GMT+01:00)",
-      "image": "image-1694737847032-636235733.jpg",
-      "id": 33
+      "fullName": "Ayman El aouad",
+      "email": "aymansep@gmail.com",
+      "salt": "$2a$10$xEN3/vpUXPdTd/.JzOvPbO",
+      "password": "$2a$10$xEN3/vpUXPdTd/.JzOvPbOfoes9tMr/NZ5XByLXikH0ZRwPhE7MGO",
+      "createdAt": "Fri Sep 15 2023 05:35:46 GMT+0100 (GMT+01:00)",
+      "image": "image-1694752546358-211792994.jpg",
+      "id": 2
     }
   ],
   "blogs": [
     {
-      "title": "Aut rerum aliqua At",
-      "content": "Ullam blanditiis rep",
-      "userId": 14,
-      "userEmail": "soufiane@isoufiane.com",
+      "blogTitle": " What we know about the Morocco earthquake ",
+      "blogContent": " Nearly 1,500 people have died in the province of Al Haouz, where the quake was most devastating. The region, like many other badly affected locations, lies south of Morocco at the foot of the Atlas Mountains, and includes remote villages and settlements that have been difficult for rescuers to reach.\r\n\r\nEyewitnesses in the foothills of the mountains said some towns are completely destroyed, with almost all the homes in an area of the village of Asni damaged.\r\n\r\nThe scale of the quake’s impact is still becoming clear, but eyewitnesses CNN spoke to gave a sense of the destruction, especially in isolated villages that have been most badly hit. ",
+      "userId": 1,
+      "userFullName": "Soufiane Belchhab",
+      "userEmail": "me@isoufiane.com",
+      "blogImage": "image-1694749106863-585790914.webp",
+      "createdAt": "Sep 15, 2023, 5:05 AM",
       "id": 1
     },
     {
-      "title": "Aut rerum aliqua At",
-      "content": "Ullam blanditiis rep",
-      "userId": 14,
-      "userEmail": "soufiane@isoufiane.com",
-      "id": 2
+      "blogTitle": " Morocco earthquake: Is it safe to travel and are flights to Marrakech cancelled? ",
+      "blogContent": " The quake caused buildings to collapse and aftershocks are likely in the region in the coming days.\r\n\r\nOn Friday a 6.8 magnitude earthquake hit Morocco killing more than 2,800 people and injuring thousands.\r\n\r\nRescue efforts are still ongoing and the death toll is likely to rise as they continue. The epicentre of the quake was around 70 km southwest of Marrakech - a city popular with international visitors.\r\n\r\nExperts have said that aftershocks from the earthquake are likely in the region for the next couple of days. At least 25 have already happened since Friday, according to the European-Mediterranean Seismological Centre.\r\n\r\nWith thousands of people booked to visit the country this autumn, is it safe to travel to Morocco?",
+      "userId": 1,
+      "userFullName": "Soufiane Belchhab",
+      "userEmail": "me@isoufiane.com",
+      "blogImage": "image-1694750705003-147365896.webp",
+      "createdAt": "Sep 15, 2023, 5:05 AM",
+      "id": 6
     },
     {
-      "title": "Aut rerum aliqua At",
-      "content": "Ullam blanditiis rep",
-      "userId": 14,
+      "blogTitle": " NASA team calls for end to UFO stigma as search for proof continues ",
+      "blogContent": " With ever more sightings of so-called 'UAP' being reported by US military personnel, new means for recording and studying them are badly needed.\r\n\r\nA new report commissioned by NASA has outlined how the US's space agency can do more to help explain mysterious flying objects spotted around the world, this at a time when theories and claims about extraterrestrial visitations to Earth are suddenly circulating widely once again.\r\n\r\nThe paper on Unidentified Anomalous Phenomena, or UAP – the US government's preferred term for what are popularly called UFOs – argues that even though many of the sightings recorded in recent years have since been revealed as nothing out of the ordinary, there remain more than a few that are not explicable with current data.\r\n\r\nNASA's role, the authors write, is to use the full spectrum of its technological power to improve monitoring and study of these phenomena – and to lend its unique credibility to an issue where rigorous scientific investigation is still hampered by stigma.\r\n\r\n\"The negative perception surrounding the reporting of UAP poses an obstacle to collecting data on these phenomena,\" the report's authors write.\r\n\r\n\"NASA’s very involvement in UAP will play a vital role in reducing stigma associated with UAP reporting, which almost certainly leads to data attrition at present. NASA’s long-standing public trust, which is essential for communicating findings about these phenomena to citizens, is crucial for destigmatising UAP reporting.\"",
+      "userId": 1,
+      "userFullName": "Soufiane Belchhab",
       "userEmail": "soufiane@isoufiane.com",
-      "id": 3
+      "blogImage": "image-1694752404169-777453042.webp",
+      "createdAt": "Sep 15, 2023, 5:33 AM",
+      "id": 8
+    },
+    {
+      "blogTitle": "10 Articles Java Developers Should Read this Week",
+      "blogContent": "Hello guys, curation is one of my passion and so is reading. I read a lot, here in Medium, On Reddit, On HackerNews, and in general other places on the Internet. While reading so many articles I have noticed one thing that sometimes a good article doesn’t get the exposure it deserves and when I see that I feel for them.\r\n\r\nIt takes a lot of hard work, time, and patience to write an article and there is nothing more frustrating to find that only a handful of your friends have read it.\r\n\r\nJava Community has given so much love to me and I am really grateful I felt that I should also do something for new writers and bloggers and Java developers who write and that’s why I have created this\r\nMedium\r\nPublication, Javarevisited.\r\n\r\nIf you follow me that you know that I solely write on my blog Javarevisited and Java67 but in this place, it’s not just me but other Java programmer and developer who also gets a chance to write and share their thoughts.\r\n\r\nApart from that, I have also started a series of curation articles, where I will share some worth reading Java articles from Medium so that you can read some interesting articles and those articles also get more exposure they deserve before falling on the sea.\r\n\r\nSo, here is my first such curated list of best Java articles of this week from Medium:",
+      "userId": 2,
+      "userFullName": "Soufiane Belchhab",
+      "userEmail": "aymansep@gmail.com",
+      "blogImage": "image-1694752618196-337034728.jpg",
+      "createdAt": "Sep 15, 2023, 5:36 AM",
+      "id": 9
     }
   ]
 }

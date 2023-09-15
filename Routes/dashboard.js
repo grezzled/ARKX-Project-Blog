@@ -6,6 +6,7 @@ const utils = require('../Utils')
 router.get('/dashboard', authenticate, (req, res) => {
     const jsonData = JSON.stringify({ data: req.user },)
     const data = {
+        userFullName: req.user.fullName,
         userId: req.user.id,
         userEmail: req.user.email,
         userImage: req.user.image

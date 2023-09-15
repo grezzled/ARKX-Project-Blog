@@ -32,7 +32,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
@@ -44,21 +44,21 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider d-none">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <div class="sidebar-heading d-none">
                 Interface
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item d-none">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
@@ -74,7 +74,7 @@
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
+            <li class="nav-item d-none">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
@@ -93,15 +93,15 @@
             </li>
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            <hr class="sidebar-divider d-none">
 
             <!-- Heading -->
-            <div class="sidebar-heading">
+            <div class="sidebar-heading d-none">
                 Addons
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
+            <li class="nav-item active d-none">
                 <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
                     aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
@@ -123,14 +123,14 @@
             </li>
 
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
+            <li class="nav-item d-none">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item d-none">
                 <a class="nav-link" href="tables.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Tables</span></a>
@@ -179,7 +179,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
+                        <li class="nav-item dropdown no-arrow d-sm-none d-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
@@ -203,7 +203,7 @@
                         </li>
 
                         <!-- Nav Item - Alerts -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        <li class="nav-item dropdown no-arrow mx-1 d-none">
                             <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-bell fa-fw"></i>
@@ -254,7 +254,7 @@
                         </li>
 
                         <!-- Nav Item - Messages -->
-                        <li class="nav-item dropdown no-arrow mx-1">
+                        <li class="nav-item dropdown no-arrow mx-1 d-none">
                             <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-envelope fa-fw"></i>
@@ -322,7 +322,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    <%=data.userFullName%>
+                                </span>
                                 <img class="img-profile rounded-circle" src="uploads/<%=data.userImage%>">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -357,16 +359,31 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-                    <form id="post-form">
-                        <label for="blog_title">Title:</label>
-                        <input type="text" id="blog_title" name="title" required>
-                        <label for="blog_content">Content:</label>
-                        <textarea id="blog_content" name="content" required></textarea>
-                        <button type="submit">Create Post</button>
-                    </form>
+                    <div class="container">
+                        <h1 class="h3 mb-4 text-gray-800">Write Article</h1>
+                        <form id="post-form" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="blog_title">Title:</label>
+                                <input type="text" class="form-control" id="blog_title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="blog_content">Content:</label>
+                                <textarea class="form-control" id="blog_content" name="content" rows="5"
+                                    required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="blog_image">Image:</label>
+                                <input type="file" class="form-control-file" id="blog_image" name="image">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Create Post</button>
+                        </form>
+                        <hr />
+                        <h1 class="h3 mb-4 text-gray-800">My Articles</h1>
 
-                    <div id="blogContainer" class="row"></div>
+                        <div id="blogContainer" class="row"></div>
+                    </div>
+
+
                 </div>
                 <!-- /.container-fluid -->
 
@@ -408,7 +425,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" id="logout-button">Logout</a>
                 </div>
             </div>
         </div>
@@ -427,22 +444,45 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', function () {
+            // Load blogs on page start
+            fetchAndDisplayBlogs();
 
             const postForm = document.getElementById('post-form');
             postForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const title = document.getElementById('blog_title').value;
                 const content = document.getElementById('blog_content').value;
+                const imageInput = document.getElementById('blog_image');
+                const imageFile = imageInput.files[0];
 
-                // Send a POST request to create a new blog post
+                const now = new Date();
+                const options = {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                    hour: 'numeric',
+                    minute: 'numeric',
+                };
+
+                const shortDateAndTime = now.toLocaleString(undefined, options);
+
+                // Create a FormData object and append the title, content, and image
+                const formData = new FormData();
+                formData.append('title', title);
+                formData.append('content', content);
+                formData.append('image', imageFile);
+                formData.append('createdAt', shortDateAndTime);
+
+                // Send a POST request to create a new blog post with FormData
                 fetch('/blog/create', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ title, content })
+                    body: formData, // Use the FormData object as the request body
                 })
                     .then(response => response.json())
+                    .then(data => {
+                        // Call a function to dynamically add the new blog card
+                        addNewBlogCard(data);
+                    })
                     .catch(error => {
                         console.error('Error creating post:', error);
                     });
@@ -462,14 +502,60 @@
                         console.error('Logout error:', error);
                     });
             });
-
-
+            // ... rest of your code
         });
 
-        // Function to fetch and display all user blogs
+        //* Function to add a new blog card to the page dynamically
+        function addNewBlogCard(blogData) {
+            const blogContainer = document.getElementById("blogContainer");
+
+            const cardHTML = `
+        <div class="col-lg-6 col-md-12 mb-4">
+            <div class="card shadow mb-4" style="border-radius: 10px; overflow: hidden;"  data-blog-id="${blogData.id}">
+                <!-- Image -->
+                <div class="card-img-top text-center">
+                    <img src="uploads/blog/${blogData.blogImage}" alt="Blog Image" class="img-fluid">
+                </div>
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">${blogData.blogTitle}</h6>
+                    <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                            aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">Blog Options:</div>
+                            <a class="dropdown-item" onclick="editBlog(${blogData.id})">Edit</a>
+                            <a class="dropdown-item" onclick="unlistBlog(${blogData.id})">Unlist</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" onclick="deleteBlog(${blogData.id})">Delete Blog</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body" style="max-height: 3 * (1.2em); overflow: hidden;">
+                    ${blogData.blogContent}
+                </div>
+                <!-- Card Footer -->
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <div class="text-center">
+                        <small>Author: ${blogData.userEmail}</small> |
+                        <small>${blogData.createdAt}</small>
+                    </div>
+                    <button class="btn btn-primary" style="align-self: flex-end;" onclick="readMore(${blogData.id})">Read More</button>
+                </div>
+            </div>
+        </div>
+    `;
+
+            blogContainer.insertAdjacentHTML('beforeend', cardHTML);
+        }
+
+        //* Function to fetch and display all user blogs
         function fetchAndDisplayBlogs() {
             const userDataScriptTag = document.getElementById("userData");
-            console.log(userDataScriptTag)
             const userId = JSON.parse(userDataScriptTag.innerHTML);
 
             fetch('/blogs/' + userId.id)
@@ -479,22 +565,45 @@
 
                     data.forEach(blog => {
                         const cardHTML = `
-                        <div class="col-md-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">${blog.title}</h5>
-                                    <p class="card-text">${blog.content}</p>
-                                    <p class="card-text">User ID: ${blog.userId}</p>
-                                    <p class="card-text">User Email: ${blog.userEmail}</p>
-                                    <div class="card-footer">
-                                        <button class="btn btn-primary" onclick="editBlog(${blog.id})">Edit</button>
-                                        <button class="btn btn-danger" onclick="deleteBlog(${blog.id})">Delete</button>
+                    <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="card shadow mb-4" style="border-radius: 10px; overflow: hidden;"  data-blog-id="${blog.id}">
+                            <!-- Image -->
+                            <div class="card-img-top text-center">
+                                <img src="uploads/blog/${blog.blogImage}" alt="Blog Image" class="img-fluid">
+                            </div>
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">${blog.blogTitle}</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                        aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">Blog Options:</div>
+                                        <a class="dropdown-item" onclick="editBlog(${blog.id})">Edit</a>
+                                        <a class="dropdown-item" onclick="unlistBlog(${blog.id})">Unlist</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" onclick="deleteBlog(${blog.id})">Delete Blog</a>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Card Body -->
+                            <div class="card-body" style="max-height: 3 * (1.2em); overflow: hidden;">
+                                ${blog.blogContent}
+                            </div>
+                            <!-- Card Footer -->
+                            <div class="card-footer d-flex justify-content-between align-items-center">
+                                <div class="text-center">
+                                    <small>Author: ${blog.userEmail}</small> |
+                                    <small>${blog.createdAt}</small>
+                                </div>
+                                <button class="btn btn-primary" style="align-self: flex-end;" onclick="readMore(${blog.id})">Read More</button>
+                            </div>
                         </div>
-
-                        `;
+                    </div>
+                `;
                         blogContainer.innerHTML += cardHTML;
                     });
                 })
@@ -503,9 +612,37 @@
                 });
         }
 
-        fetchAndDisplayBlogs();
+        //* Function to delete a blog post by its ID
+        function deleteBlog(blogId) {
+            // Send a DELETE request to the server to delete the blog post
+            fetch(`/blog/${blogId}`, {
+                method: 'DELETE',
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Blog post deleted successfully, remove the card from the DOM
+                        const cardToRemove = document.querySelector(`[data-blog-id="${blogId}"]`);
+                        if (cardToRemove) {
+                            cardToRemove.remove();
+                        }
+                    } else {
+                        console.error('Delete Blog error:', data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Delete Blog error:', error);
+                });
+        }
+
+        function readMore(blogId) {
+            const blogPostUrl = `/blog/${blogId}`
+            window.open(blogPostUrl, '_blank');
+        }
 
     </script>
+
+
 
 </body>
 

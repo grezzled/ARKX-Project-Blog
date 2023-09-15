@@ -33,7 +33,7 @@ const validationOptions = [
 ]
 
 router.post('/register', upload.single('image'), validationOptions, async (req, res) => {
-    const { email, password, confirmPassword } = req.body
+    const { fullName, email, password, confirmPassword } = req.body
     const image = req.file
     const errors = validationResult(req)
 
@@ -51,6 +51,7 @@ router.post('/register', upload.single('image'), validationOptions, async (req, 
     try {
         const salt = utils.hash.makeSalt(10)
         const userData = {
+            fullName,
             email,
             salt,
             password: utils.hash.makeHash(password, salt),
@@ -62,7 +63,7 @@ router.post('/register', upload.single('image'), validationOptions, async (req, 
         const data = await postUser(userData)
 
         //* Create token
-        const payload = { id: data.id, email: data.email, image: data.image, createdAt: data.createdAt }
+        const payload = { id: data.id, fullName:data.fullName, email: data.email, image: data.image, createdAt: data.createdAt }
         const token = createToken(payload)
 
         //* Save token to cookie
@@ -94,7 +95,7 @@ router.post('/login', async (req, res) => {
         
         //* Create token
         const data = user
-        const payload = { id: data.id, email: data.email, image: data.image, createdAt: data.createdAt }
+        const payload = { id: data.id, fullName:data.fullName, email: data.email, image: data.image, createdAt: data.createdAt }
         const token = createToken(payload)
 
         //* Save token to cookie

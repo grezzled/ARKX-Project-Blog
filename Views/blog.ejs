@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= blogTitle %></title>
+    <!-- Include Bootstrap CSS here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1><%= blogTitle %></h1>
+                <p class="text-muted"><%= createdAt %></p>
+                
+                <img src="localhost:9000/uploads/blog/<%= blogImage %>" alt="Blog Image" class="img-fluid">
+                <p><%= blogContent %></p>
+                <p><strong>Author:</strong> <%= userFullName %></p>
+                <!-- You can add the blog image here using an <img> tag -->
+            </div>
+        </div>
+    </div>
+    <!-- Include Bootstrap JS and jQuery here if needed -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+  
