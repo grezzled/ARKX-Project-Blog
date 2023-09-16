@@ -1,0 +1,56 @@
+{
+    "blog_posts": [
+        {
+            "title": "My First Blog Post",
+            "content": "This is the content of my first blog post...",
+            "short_content": "this is a short content of the blog",
+            "description": "this is a short description of the blog post",
+            "categories": [
+                "Technology",
+                "Programming"
+            ],
+            "timestamp": "2023-09-15T12:00:00Z",
+            "views": 100,
+            "visibility": {
+                "public": true,
+                "featured": false,
+                "draft": false
+            },
+            "analytics": {
+                "page_views": 150
+            },
+            "cover": {
+                "featured": "original.jpg",
+                "thumbnail": "thumbnail.jpg",
+                "wide": "large_image.jpg"
+            },
+            "images": [
+                {
+                    "url": "image_url_1.jpg",
+                    "caption": "Image 1 Caption"
+                },
+                {
+                    "url": "image_url_2.jpg",
+                    "caption": "Image 2 Caption"
+                }
+            ],
+            "tags": [
+                "programming",
+                "technology",
+                "beginner"
+            ],
+            "related_articles": [
+                {
+                    "title": "Another Great Post",
+                    "url": "another_post_url",
+                    "thumbnail": "another_post_thumbnail.jpg"
+                }
+            ],
+            "author_info": {
+                "author_id": "author_user_id",
+                "author_name": "Author123",
+                "author_profile_picture": "author_profile_pic.jpg"
+            }
+        }
+    ]
+}
