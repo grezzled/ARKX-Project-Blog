@@ -19,3 +19,6 @@ console.log(r.getFirstName(),
     r.getHashedPassword(),
     r.getCreatedAt(),
     r.getLastLoginAt())
+
+
+    
