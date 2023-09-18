@@ -1,5 +1,5 @@
 //* Load .env file
-require('dotenv').config()
+require('dotenv').config() 
 
 const express = require('express')
 const app = express()
@@ -14,7 +14,7 @@ app.use(express.static(__dirname + config.staticFolderPath, { maxAge: 36000 }))
 // app.use(require('helmet')(config.helmetOptions))
 if (config.compressionEnabled)
     app.use(require('compression')())
-app.use(require('morgan')("default", config.helmetOptions))
+// app.use(require('morgan')("default", config.helmetOptions))
 app.use(cookieParser());
 
 //* ejs view engine

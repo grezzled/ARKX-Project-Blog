@@ -69,3 +69,22 @@ exports.deleteBlogById = async (blogId) => {
         console.error('Error deleting blog post:', error);
     }
 }
+
+//* Edit a specific blog by its ID
+exports.editBlogById = async (blogId, data) => {
+    try {
+
+        let blog = await this.getBlogById(blogId)
+        blog.blogTitle = data.blogTitle
+        blog.blogContent= data.blogContent
+        console.log(blog)
+        const response = await axios.put(`${JSON_SERVER_API_URL}/blogs/${blogId}`, blog);
+        if (response.status === 200) {
+            console.log('Blog post updated successfully');
+            return response.data; // Return the updated blog post
+        }
+    } catch (error) {
+        console.error('Error updating blog post:', error);
+        throw error; // Throw an error if there's an issue
+    }
+};

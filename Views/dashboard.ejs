@@ -383,9 +383,43 @@
                         <div id="blogContainer" class="row"></div>
                     </div>
 
-
                 </div>
                 <!-- /.container-fluid -->
+
+                <!-- Edit Blog Modal -->
+                <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editModalLabel">Edit Blog Post</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- Edit form content -->
+                                <div id="edit-form">
+                                    <input type="hidden" id="edit-blog-id" name="id">
+                                    <div class="mb-3">
+                                        <label for="edit-blog-title" class="form-label">Title:</label>
+                                        <input type="text" class="form-control" id="edit-blog-title" name="title">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="edit-blog-content" class="form-label">Content:</label>
+                                        <textarea class="form-control" id="edit-blog-content" name="content"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                <button class="btn btn-primary" form="edit-form" onclick="saveEditedBlog()">Save
+                                    Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
 
             </div>
             <!-- End of Main Content -->
@@ -431,7 +465,10 @@
         </div>
     </div>
 
+
     <!-- Bootstrap core JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -440,6 +477,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
 
     <script>
 
@@ -535,7 +573,7 @@
                     </div>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body" style="max-height: 3 * (1.2em); overflow: hidden;">
+                <div class="card-body" style="max-height:120px; overflow: hidden;">
                     ${blogData.blogContent}
                 </div>
                 <!-- Card Footer -->
@@ -590,7 +628,7 @@
                                 </div>
                             </div>
                             <!-- Card Body -->
-                            <div class="card-body" style="max-height: 3 * (1.2em); overflow: hidden;">
+                            <div class="card-body" style="max-height: 120px; overflow: hidden;">
                                 ${blog.blogContent}
                             </div>
                             <!-- Card Footer -->
@@ -632,6 +670,62 @@
                 })
                 .catch(error => {
                     console.error('Delete Blog error:', error);
+                });
+        }
+
+        function editBlog(blogId) {
+            fetch(`/api/blog/${blogId}`)
+                .then(response => response.json())
+                .then(blog => {
+                    console.log(blog)
+                    // Populate the edit form with the blog data
+                    const editForm = document.getElementById('edit-form');
+                    editForm.querySelector('#edit-blog-id').value = blog.id;
+                    editForm.querySelector('#edit-blog-title').value = blog.blogTitle;
+                    editForm.querySelector('#edit-blog-content').value = blog.blogContent;
+
+                    // Open the edit modal
+                    const editModal = new bootstrap.Modal(document.getElementById('editModal'));
+                    editModal.show();
+                })
+                .catch(error => {
+                    console.error('Edit Blog error:', error);
+                });
+        }
+
+        function saveEditedBlog() {
+            const editForm = document.getElementById('edit-form');
+            const id = editForm.querySelector('#edit-blog-id').value;
+            const title = editForm.querySelector('#edit-blog-title').value;
+            const content = editForm.querySelector('#edit-blog-content').value;
+
+            // Send a POST request to update the blog post
+            fetch('/api/blog/edit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ id, title, content })
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Close the edit modal
+                        const editModal = new bootstrap.Modal(document.getElementById('editModal'));
+                        editModal.hide();
+
+                        // Update the blog card content on the page
+                        const cardToUpdate = document.querySelector(`[data-blog-id="${id}"]`);
+                        if (cardToUpdate) {
+                            cardToUpdate.querySelector('h6').textContent = title;
+                            cardToUpdate.querySelector('.card-body').textContent = content;
+                        }
+                    } else {
+                        console.error('Edit Blog error:', data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Edit Blog error:', error);
                 });
         }
 

@@ -81,5 +81,25 @@ router.get('/blog/:blogId', authenticate, async (req, res) => {
 });
 
 
+router.get('/api/blog/:blogId', authenticate, async (req, res) => {
+    console.log('HERE')
+    const data = await jsonServer.getBlogById(req.params.blogId)
+    res.json(data)
+});
+
+// Add this route for editing a blog post
+router.post('/api/blog/edit', authenticate, async (req, res) => {
+    const { id, title, content } = req.body;
+
+    try {
+        const updatedBlog = await jsonServer.editBlogById(id, { blogTitle: title, blogContent: content });
+
+        res.json({ success: true, updatedBlog });
+    } catch (error) {
+        console.error('Edit Blog Error:', error);
+        res.status(500).json({ success: false, error: 'Internal Server Error' });
+    }
+});
+
 
 module.exports = router;
