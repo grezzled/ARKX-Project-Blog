@@ -1,4 +1,58 @@
 {
+    "users": [
+        {
+            "_id": "user_id",
+            "authentication": {
+                "email": "user@example.com",
+                "password": "hashed_password",
+                "token": "authentication_token"
+            },
+            "profile": {
+                "display_name": "User123",
+                "profile_picture": "profile_pic_url.jpg",
+                "bio": "A passionate blogger."
+            },
+            "contact": {
+                "email": "user@example.com",
+                "social_media": {
+                    "twitter": "twitter_username",
+                    "facebook": "facebook_username"
+                },
+                "website": "https://userwebsite.com"
+            },
+            "preferences": {
+                "notifications": {
+                    "email": true
+                },
+                "display": {
+                    "dark_mode": false,
+                    "font_size": "medium"
+                },
+                "language": "en"
+            },
+            "security": {},
+            "analytics": {},
+            "privacy": {
+                "consent_records": [
+                    {
+                        "type": "GDPR",
+                        "timestamp": "2023-09-15T10:00:00Z"
+                    }
+                ],
+                "privacy_settings": {
+                    "public_profile": true
+                }
+            },
+            "sessions": {
+                "active_tokens": [
+                    "token1",
+                    "token2"
+                ],
+                "last_login": "2023-09-15T10:00:00Z"
+            }
+        }
+    ],
+    "categories": [],
     "blog_posts": [
         {
             "title": "My First Blog Post",
