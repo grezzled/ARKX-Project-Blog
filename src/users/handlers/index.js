@@ -1,5 +1,5 @@
 const makeAddUser = require('./addUser')
-const dataAccessUser = require('../data/dataAccessUser')
+const db = require('../../../db/userData')
 
-exports.addUser = makeAddUser(dataAccessUser)
+exports.addUser = makeAddUser({ db })
 

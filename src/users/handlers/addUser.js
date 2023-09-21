@@ -1,8 +1,12 @@
-const { makeUser } = require('../models')
+const { makeUser } = require('..')
 
-module.exports = function makeAddUser(db) {
+module.exports = function makeAddUser({ db }) {
     return function addUser(userInfo) {
+        console.log("HANDLER:", userInfo)
         const userData = makeUser(userInfo)
-        db.insert(userData)
+        return db.insert({
+            username: userData.getUsername(),
+            password: userData.getPassword()
+        })
     }
 }

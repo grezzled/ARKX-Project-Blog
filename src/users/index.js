@@ -1,5 +1,9 @@
-const buildUser = require('./userModel')
+const { buildUser } = require('./userModel');
+const sanitizer = require('../../utils/sanitizer')
+const validator = require('../../utils/validator');
 
-exports.makeUser = buildUser()
+const makeUser = buildUser({ sanitizer, validator })
+module.exports = { makeUser }
+
 
 
