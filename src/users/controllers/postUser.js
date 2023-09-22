@@ -1,4 +1,4 @@
-exports.makePostUser = ({ addUser }) => {
+exports.makePostUser = ({ addUser, responseHelper }) => {
     return async function postUser(httpRequest) {
         try {
             const { source = {}, ...userInfo } = httpRequest.body
@@ -17,17 +17,16 @@ exports.makePostUser = ({ addUser }) => {
                     'Last-Modified': new Date().toString()
                 },
                 statusCode: 201,
-                body: { posted }
+                body: responseHelper.postResponse(posted)
             }
         } catch (e) {
+            console.log(e)
             return {
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 statusCode: 400,
-                body: {
-                    error: e.message
-                }
+                body: responseHelper.postResponse(e.message, true)
             }
         }
     }

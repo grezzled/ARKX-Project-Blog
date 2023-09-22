@@ -6,7 +6,8 @@ module.exports = function makeAddUser({ db }) {
         const userData = makeUser(userInfo)
         return db.insert({
             username: userData.getUsername(),
-            password: userData.getPassword()
+            email: userData.getEmail(),
+            password: userData.getPassword(),
         })
     }
 }
