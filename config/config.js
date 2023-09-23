@@ -5,7 +5,7 @@ module.exports = {
   },
   api: {
     ALLOWED_FIELDS: ["userId", "username", "email", "role", "salary", "active", "inHold"],
-    LIMIT: 10,
+    LIMIT: 100,
     OFFSET: 1,
     SORT_BY: 'createdAt',
     SORT_DIRECTION: 'DESC'

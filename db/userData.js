@@ -26,26 +26,21 @@ exports.getAll = async () => {
 }
 
 
-// TODO sort by created_at
-// TODO filter by age ASC/DESC 
-// TODO filter by salary ASC/DESC 
-// TODO filter by activated TRUE/FALSE
-// TODO filter by role USER/ADMIN
-// TODO filter by inHold TRUE/FALSE
-// TODO "metadata": {
-//     "totalItems": 100,
-//     "currentPage": 1,
-//     "itemsPerPage": 10
-//   },
-
 exports.getFilteredUsers = async (filterOptions) => {
-
-    let sortOrder = 1
-    if (filterOptions.sortDirection === "ASC")
-        sortOrder = 1
-    if (filterOptions.sortDirection === "DESC")
-        sortOrder = -1
-
+    /**
+     * Retrieves filtered user data from a MongoDB database based on the provided filter options.
+     * @param {Object} filterOptions - An object containing various filter options for retrieving users.
+     * @param {string} [filterOptions.q] - The search query to filter users based on username or email.
+     * @param {string} filterOptions.sortBy - The field to sort the users by.
+     * @param {string} filterOptions.sortDirection - The sort direction, either "ASC" for ascending or "DESC" for descending.
+     * @param {number} filterOptions.offset - The offset for pagination, specifying the page number.
+     * @param {number} filterOptions.limit - The maximum number of users to retrieve per page.
+     * @param {string[]} [filterOptions.fields] - The fields to include in the retrieved user data.
+     * @param {boolean} [filterOptions.active] - Filter users by active status.
+     * @param {boolean} [filterOptions.inHold] - Filter users by in-hold status.
+     * @param {string} [filterOptions.role] - Filter users by role.
+     * @returns {Object[]} - An array of user objects that match the specified filter options.
+     */
     const query = {}
 
     if (filterOptions.q)
@@ -71,11 +66,17 @@ exports.getFilteredUsers = async (filterOptions) => {
     const searchQueries = [
         { username: { $regex: filterOptions.q, $options: 'i' } },
         { email: { $regex: filterOptions.q, $options: 'i' } },
-        { role: { $regex: filterOptions.q, $options: 'i' } },
     ];
 
+    const options = {}
+    options.$or = searchQueries
+    if (filterOptions.active) options.active = filterOptions.active === 'false' ? false : true;
+    if (filterOptions.inHold) options.inHold = filterOptions.inHold === 'false' ? false : true;
+    if (filterOptions.role) options.role = filterOptions.role === 'ADMIN' ? 'ADMIN' : 'USER';
+
+
     const users = await User
-        .find({ $or: searchQueries })
+        .find(options)
         .sort(sortOption)
         .skip(skip)
         .limit(limit)

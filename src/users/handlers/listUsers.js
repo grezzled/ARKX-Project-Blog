@@ -6,13 +6,16 @@ module.exports = function makeListUsers({ db }) {
     return async function listUsers({ query }) {
 
         const filterOptions = {
+            ...query,
             q: query.q ?? "",
             sortBy: query.sort ?? config.api.SORT_BY,
             sortDirection: query.sortDirection ?? config.api.SORT_DIRECTION,
             offset: query.offset ?? config.api.OFFSET,
             limit: config.api.LIMIT,
-            fields: config.api.ALLOWED_FIELDS
+            fields: config.api.ALLOWED_FIELDS,
         }
+
+        console.log(filterOptions)
 
         const users = await db.getFilteredUsers(filterOptions)
 
@@ -27,7 +30,7 @@ module.exports = function makeListUsers({ db }) {
                 total_users: users.length
             }
         }
-        
+
         return result
     }
 }
