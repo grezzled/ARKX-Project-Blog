@@ -1,8 +1,33 @@
 const { makeUser } = require('..')
+const config = require('../../../config/config')
+const strings = require('../../../config/strings.config')
 
 module.exports = function makeListUsers({ db }) {
-    return async function listUsers() {
-        const users = await db.getAll()
-        return users
+    return async function listUsers({ query }) {
+
+        const filterOptions = {
+            q: query.q ?? "",
+            sortBy: query.sort ?? config.api.SORT_BY,
+            sortDirection: query.sortDirection ?? config.api.SORT_DIRECTION,
+            offset: query.offset ?? config.api.OFFSET,
+            limit: config.api.LIMIT,
+            fields: config.api.ALLOWED_FIELDS
+        }
+
+        const users = await db.getFilteredUsers(filterOptions)
+
+        if (!users.length)
+            return strings.NO_USER_FOUND
+
+        const result = {
+            data: users,
+            metadata: {
+                page: filterOptions.offset,
+                per_page: filterOptions.limit,
+                total_users: users.length
+            }
+        }
+        
+        return result
     }
 }

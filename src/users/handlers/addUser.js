@@ -7,10 +7,14 @@ module.exports = function makeAddUser({ db }) {
         console.log("HANDLER:", userData)
 
         return db.insert({
-            userId : userData.getUserId(),
+            userId: userData.getUserId(),
             username: userData.getUsername(),
             email: userData.getEmail(),
             password: userData.getPassword(),
+            salary: userData.getSalary(),
+            role: userData.getRole(),
+            active: userData.getActive(),
+            inHold: userData.getInHold(),
         })
     }
 }

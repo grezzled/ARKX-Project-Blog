@@ -6,10 +6,10 @@ module.exports = function makeEditUser({ db }) {
         }
 
 
-        
-        //* check if there are changes in the object other that "source" 
+
+        //* check if there are changes in the object other than "source" 
         //* this one is always exist 
-        console.log('Keys',Object.keys(changes).length)
+        console.log('Keys', Object.keys(changes).length)
         if (!Object.keys(changes).length > 1) {
             throw new Error('You must supply changes');
         }
@@ -23,10 +23,13 @@ module.exports = function makeEditUser({ db }) {
         const user = makeUser({ ...existing, ...changes })
 
         const updated = await db.update(userId, {
-            userId: user.getUserId(),
             username: user.getUsername(),
             email: user.getEmail(),
             password: user.getPassword(),
+            salary: user.getSalary(),
+            role: user.getRole(),
+            active: user.getActive(),
+            inHold: user.getInHold(),
         })
 
         return { existing, updated }

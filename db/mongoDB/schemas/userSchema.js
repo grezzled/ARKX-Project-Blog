@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const strings = require('../../../config/strings.config')
 
 const userSchema = new mongoose.Schema({
-    userId:{
+    userId: {
         type: String,
         required: [true, strings.ID_REQUIRED],
         unique: [true, strings.ID_EXISTS]
@@ -10,7 +10,7 @@ const userSchema = new mongoose.Schema({
     username: {
         type: String,
         required: [true, strings.USERNAME_REQUIRED],
-        unique: [true, strings.USERNAME_EXISTS]
+        unique: [true, strings.USERNAME_EXISTS],
     },
     email: {
         type: String,
@@ -21,13 +21,29 @@ const userSchema = new mongoose.Schema({
                 return /\S+@\S+\.\S+/.test(value);
             },
             message: strings.INVALID_EMAIL_FORMAT
-        }
+        },
     },
     password: {
         type: String,
         required: [true, strings.PASSWORD_REQUIRED],
     },
-});
+    role: {
+        type: String,
+        enum: ['USER', 'ADMIN'],
+        default: 'USER'
+    },
+    salary: {
+        type: Number,
+    },
+    active: {
+        type: Boolean,
+        default: false,
+    },
+    inHold: {
+        type: Boolean,
+        default: true,
+    }
+}, { timestamps: true, versionKey: false });
 
 userSchema.post('save', function (error, doc, next) {
     if (error.name === 'MongoServerError' && error.code === 11000) {

@@ -1,13 +1,15 @@
 exports.makeGetUsers = ({ listUsers, responseHelper }) => {
     return async function getUsers(httpRequest) {
         try {
-            const users = await listUsers(httpRequest)
+
+            const query = httpRequest.query
+            const result = await listUsers({ query })
             return {
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 statusCode: 200,
-                body: responseHelper.getResponse(users)
+                body: responseHelper.getResponse(result)
             }
         } catch (e) {
             console.log(e)

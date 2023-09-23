@@ -4,14 +4,21 @@ exports.buildUser = ({ validator, sanitizer, idMaker } = {}) => {
         username,
         email,
         password,
+        salary,
+        role,
+        active,
+        inHold
     }) {
-        console.log("idMaker", idMaker())
         console.log("ENTITY:", username, email, password)
         return Object.freeze({
             getUserId: () => idMaker(),
             getUsername: () => username,
             getEmail: () => email,
             getPassword: () => password,
+            getSalary: () => salary,
+            getRole: () => role,
+            getActive: () => active,
+            getInHold: () => inHold
         })
     }
 }

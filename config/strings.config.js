@@ -22,3 +22,5 @@ exports.EMAIL_REQUIRED = 'Please provide an email'
 exports.INVALID_EMAIL_FORMAT = 'Please provide a valid email'
 
 exports.PASSWORD_REQUIRED = 'Please provide a password'
+
+exports.NO_USER_FOUND = 'Users not found'
