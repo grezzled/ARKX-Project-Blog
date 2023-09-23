@@ -13,9 +13,13 @@ const app = express()
 app.use(morgan("default", {}))
 app.use(express.json())
 
+function validateToken(req, res, next) {
+    next()
+}
 
-//* Routes
-app.post(`${apiRoot}/users`, makeCallback(postUser))
+//* User Routes
+const usersRouter = require('./routes/users');
+app.use(`${apiRoot}/users`, validateToken, usersRouter)
 
 //* 404
 app.use(makeCallback(notFound))

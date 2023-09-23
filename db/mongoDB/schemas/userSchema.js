@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 const strings = require('../../../config/strings.config')
 
 const userSchema = new mongoose.Schema({
+    userId:{
+        type: String,
+        required: [true, strings.ID_REQUIRED],
+        unique: [true, strings.ID_EXISTS]
+    },
     username: {
         type: String,
         required: [true, strings.USERNAME_REQUIRED],
@@ -27,7 +32,13 @@ const userSchema = new mongoose.Schema({
 userSchema.post('save', function (error, doc, next) {
     if (error.name === 'MongoServerError' && error.code === 11000) {
         const field = Object.keys(error.keyValue)[0];
-        const message = `${field} already exists.`;
+        let message
+        switch (field) {
+            case 'id': message = strings.ID_EXISTS; break;
+            case 'username': message = strings.USERNAME_EXISTS; break;
+            case 'email': message = strings.EMAIL_EXISTS; break;
+            default: message = `${field} already exists.`; break;
+        }
         next(new Error(message));
     } else {
         next(error);

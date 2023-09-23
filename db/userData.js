@@ -5,3 +5,12 @@ exports.insert = async (userInfo) => {
     await user.save()
     return userInfo
 }
+
+exports.findById = async (userId) => {
+    const existedUser = User.findOne({ userId })
+    return existedUser
+}
+
+exports.update = async (userInfo) => {
+    console.log("DB:", userInfo)
+}

@@ -1,5 +1,8 @@
 module.exports = function httpCallback(controller) {
     return (req, res) => {
+        console.log("Params",req.params)
+        console.log("Query",req.query)
+        
         const httpRequest = {
             body: req.body,
             query: req.query,
@@ -22,6 +25,6 @@ module.exports = function httpCallback(controller) {
                 res.type('json')
                 res.status(httpResponse.statusCode).send(httpResponse.body)
             })
-            .catch(e => res.status(500).send({ error: 'An unkown error occurred.' }))
+            .catch(e => res.status(500).send({ error: 'An unkown error occurred.'+e }))
     }
 }
