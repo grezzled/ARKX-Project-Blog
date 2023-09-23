@@ -1,6 +1,8 @@
 require('dotenv').config()
 const express = require('express')
 const morgan = require('morgan')
+const validateJson = require('./middlewares/validateJson')
+const validateToken = require('./middlewares/validateToken')
 const { postUser, notFound } = require('./src/users/controllers')
 const makeCallback = require('./utils/httpCallback')
 const mongoDB = require('./db/mongoDB')
@@ -11,11 +13,10 @@ const app = express()
 
 //* Middlewares
 app.use(morgan("default", {}))
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
+app.use(validateJson)
 
-function validateToken(req, res, next) {
-    next()
-}
 
 //* User Routes
 const usersRouter = require('./routes/users');

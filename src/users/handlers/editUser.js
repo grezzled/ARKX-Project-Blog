@@ -5,11 +5,16 @@ module.exports = function makeEditUser({ db }) {
             throw new Error('You must supply a user id')
         }
 
-        if (!changes) {
-            throw new Error('You must supply changes')
+
+        
+        //* check if there are changes in the object other that "source" 
+        //* this one is always exist 
+        console.log('Keys',Object.keys(changes).length)
+        if (!Object.keys(changes).length > 1) {
+            throw new Error('You must supply changes');
         }
 
-        const existing = await db.findById({ userId })
+        const existing = await db.findById(userId)
 
         if (!existing) {
             throw new RangeError('User not found.')
@@ -17,13 +22,13 @@ module.exports = function makeEditUser({ db }) {
 
         const user = makeUser({ ...existing, ...changes })
 
-        const updated = await db.update({
-            userId: user.getUserId,
-            username: userData.getUsername(),
-            email: userData.getEmail(),
-            password: userData.getPassword(),
+        const updated = await db.update(userId, {
+            userId: user.getUserId(),
+            username: user.getUsername(),
+            email: user.getEmail(),
+            password: user.getPassword(),
         })
 
-        return { ...existing, ...updated }
+        return { existing, updated }
     }
 }

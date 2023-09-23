@@ -11,6 +11,16 @@ exports.findById = async (userId) => {
     return existedUser
 }
 
-exports.update = async (userInfo) => {
-    console.log("DB:", userInfo)
+exports.update = async (userId, updatedData) => {
+    const updatedUser = await User.findOneAndUpdate(
+        { userId },
+        updatedData,
+        { new: true }
+    );
+    return updatedUser
+}
+
+exports.getAll = async () => {
+    const users = await User.find({})
+    return users
 }
