@@ -5,13 +5,21 @@ const strings = require('../../../config/strings.config')
 module.exports = function makeListUsers({ db }) {
     return async function listUsers({ query }) {
 
+        //* query validation
+        if (query.limit && query.limit > config.api.MAX_LIMIT)
+            throw new Error(strings.BAD_MAX_LIMIT)
+
+        if (query.offset == 0)
+            query.offset = 1
+
+
         const filterOptions = {
             ...query,
             q: query.q ?? "",
             sortBy: query.sort ?? config.api.SORT_BY,
             sortDirection: query.sortDirection ?? config.api.SORT_DIRECTION,
             offset: query.offset ?? config.api.OFFSET,
-            limit: config.api.LIMIT,
+            limit: query.limit ?? config.api.LIMIT,
             fields: config.api.ALLOWED_FIELDS,
         }
 
@@ -19,8 +27,11 @@ module.exports = function makeListUsers({ db }) {
 
         const users = await db.getFilteredUsers(filterOptions)
 
-        if (!users.length)
-            return strings.NO_USER_FOUND
+        if (!users.length){
+            const error = new Error(strings.NO_USER_FOUND)
+            error.statusCode = 404
+            throw error
+        }
 
         const result = {
             data: users,

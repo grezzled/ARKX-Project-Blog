@@ -23,4 +23,6 @@ exports.INVALID_EMAIL_FORMAT = 'Please provide a valid email'
 
 exports.PASSWORD_REQUIRED = 'Please provide a password'
 
-exports.NO_USER_FOUND = 'Users not found'
+//* API Messages
+exports.NO_USER_FOUND = 'Users not found.'
+exports.BAD_MAX_LIMIT = 'The maximum number of users per page exceeds the allowed limit.';

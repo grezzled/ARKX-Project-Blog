@@ -17,7 +17,7 @@ exports.makeGetUsers = ({ listUsers, responseHelper }) => {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                statusCode: 400,
+                statusCode: e.statusCode ?? 400,
                 body: responseHelper.getResponse(e.message, true)
             }
         }
