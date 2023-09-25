@@ -42,7 +42,19 @@ To get started with Users Management, follow these steps:
 
 ## User Data API
 
-This API allows you to retrieve filtered user data from a MongoDB database based on the provided filter options.
+This API allows you to post, patch and retrieve filtered user data from a MongoDB database based on the provided filter options.
+
+### Endpoint
+
+```
+POST /api/users
+```
+
+### Endpoint
+
+```
+PATCH /api/users/{USER_ID}
+```
 
 ### Endpoint
 
@@ -69,6 +81,7 @@ GET /api/users
   - `role` (string, optional) - Filter users by role.
 
 ### Response
+
 
 - `200 OK` - Successfully retrieved user data.
 
@@ -124,6 +137,7 @@ GET /api/users?role=admin&active=true&sortBy=username&sortDirection=ASC&offset=1
 - In case of any errors during processing, a `500 Internal Server Error` response is returned.
 
 Please refer to the API documentation above for more details on how to use this API to retrieve user data based on your specific requirements.
+
 
 ## Contributing
 
